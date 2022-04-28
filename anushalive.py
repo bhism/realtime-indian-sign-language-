@@ -24,7 +24,7 @@ def preprocessing(img0,IMG_SIZE=200):
     return img_th
 
 
-ALPHABET =  ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','1','2','3','4','5','6','7','8','9','callme','fingercross'] 
+ALPHABET =  ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','1','2','3','4','5','6','7','8','9'] 
 
 prev=""
 model = tf.keras.models.load_model("model_name.model")
@@ -79,34 +79,3 @@ cv2.destroyAllWindows()
 
 
 
-
-
-
-
-
-
-# cam_capture = cv2.VideoCapture(0)
-# cv2.destroyAllWindows()
-# upper_left = (50, 50)
-# bottom_right = (300, 300)
-# while True:
-#     _, image_frame = cam_capture.read()
-    
-#     #Rectangle marker
-#     r = cv2.rectangle(image_frame, upper_left, bottom_right, (100, 50, 200), 5)
-#     rect_img = image_frame[upper_left[1] : bottom_right[1], upper_left[0] : bottom_right[0]]
-    
-#     sketcher_rect = rect_img
-#     sketcher_rect = sketch_transform(sketcher_rect)
-    
-#     #Conversion for 3 channels to put back on original image (streaming)
-#     sketcher_rect_rgb = cv2.cvtColor(sketcher_rect, cv2.COLOR_GRAY2RGB)
-    
-#     #Replacing the sketched image on Region of Interest
-#     image_frame[upper_left[1] : bottom_right[1], upper_left[0] : bottom_right[0]] = sketcher_rect_rgb
-# cv2.imshow("Sketcher ROI", image_frame)
-#     if cv2.waitKey(1) == 13:
-#         break
-        
-# cam_capture.release()
-# cv2.destroyAllWindows()
